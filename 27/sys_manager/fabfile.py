@@ -9,13 +9,32 @@ Authors: lirui23(lirui23@baidu.com)
 Date:    2019-05-10 08:40
 """
 from fabric.api import cd, env, prefix, run, task
+import config
 
-
+env.hosts = config.yinli_hosts
+env.user = config.yinli_user
+env.password = config.yinli_password
+env.passwords = config.yinli_passwords
 
 
 @task
 def memory_usage():
     run('free -m')
+
+
+@task
+def cpu():
+    run('top | grep java')
+
+
+@task
+def tom_32():
+    run('ps -ef | grep tomcat-8032')
+
+
+@task
+def tom_50():
+    run('ps -ef | grep tomcat-8032')
 
 
 @task
