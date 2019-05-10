@@ -10,10 +10,7 @@ Date:    2019-05-10 08:40
 """
 from fabric.api import cd, env, prefix, run, task
 
-env.hosts = ['root@47.94.151.237']
-env.user = "root"
-env.password = "Yinlibai123"
-env.passwords = {'root@47.94.151.237': 'Yinlibai123', }
+
 
 
 @task
